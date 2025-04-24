@@ -1,1 +1,1 @@
-# OCR
+# MazerSolver
