@@ -6,3 +6,4 @@
 # - Anthony 4/29/25
 
 argparse == 1.4.0
+ffmpeg-python
