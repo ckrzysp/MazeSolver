@@ -1,4 +1,5 @@
 import argparse
+import video_frame_extractor
 
 def main():
     # Create a new argument parser (CLI instance)
@@ -18,7 +19,7 @@ def main():
     args = parser.parse_args()
 
     # Test command: RUN FROM ROOT!! 
-    # python src/cli.py extract -i "data/in/kyomoton cane.mp4" -step 5 -o data/out/kyomoton/
+    # python rat_tracker/cli.py extract -i "data/in/kyomoton cane.mp4" -step 25 -o data/out/kyomoton/
     if args.command == "extract":
         if args.i and args.step:
             video_path: str = args.i[0]
@@ -26,6 +27,7 @@ def main():
             output_path: str = args.o[0] if args.o else "output.txt"
 
             print(f"Analyzing video at {video_path} with a step of {step} frames and outputting at {output_path}.")
+            video_frame_extractor.extract_frames(video_path, output_path, step)
     else:
         parser.print_help()
 
