@@ -1,0 +1,9 @@
+# This file is the "package.json" of Python projects.
+# It lists the dependencies required to run the the rat project.
+# You can install the dependencies by running 'pip install -r requirements.txt'.
+# Add any additional modules you need to use here.
+
+# - Anthony 4/29/25
+
+argparse == 1.4.0
+ffmpeg-python
