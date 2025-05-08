@@ -1,0 +1,7 @@
+train: train
+val: val
+
+train_label_dir: train/labels
+val_label_dir: val/labels
+names:
+  0: mouse
