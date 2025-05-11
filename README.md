@@ -1,7 +1,7 @@
 # MazeSolver
 
 ## Requirements
-### Windows
+## Windows
 #### With Nvidia GPU
 - Python 3.12.x
 - Nvidia GPU >= GTX 1660 TI
