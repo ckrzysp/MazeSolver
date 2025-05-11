@@ -6,3 +6,5 @@ d1000/
 dp/
 d500/
 testfiles/
+**/coordinates.txt
+**/.idea
