@@ -1,8 +1,8 @@
 # MazeSolver
 
 ## Requirements
-# Windows
-## With Nvidia GPU
+### Windows
+#### With Nvidia GPU
 - Python 3.12.x
 - Nvidia GPU >= GTX 1660 TI
 
@@ -10,7 +10,7 @@
 Install the dependencies in requirements.txt AND cuda-requirements.txt.
 Then run 
 
-# MacOS
+## MacOS
 - Python >3.12
 
 ## To run
