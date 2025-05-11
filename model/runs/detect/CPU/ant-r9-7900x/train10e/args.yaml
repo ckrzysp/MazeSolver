@@ -1,5 +1,5 @@
 task: detect
-mode: ant-r9-7900x-10e
+mode: ant-r9-7900x
 model: yolov8n.pt
 data: data.yaml
 epochs: 10
@@ -13,7 +13,7 @@ cache: false
 device: cpu
 workers: 8
 project: null
-name: ant-r9-7900x-10e
+name: ant-r9-7900x
 exist_ok: false
 pretrained: true
 optimizer: auto
