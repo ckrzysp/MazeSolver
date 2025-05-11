@@ -31,7 +31,8 @@ def extract_frames(input_video_path: str, output_folder: str, frame_rate: int = 
             ffmpeg
             .input(input_video_path)
             .output(f"tmp/frame_%d.png", format="image2", vcodec="png")
-            .run(overwrite_output=True, quiet=True)    
+            .run(overwrite_output=True, quiet=True)
+            # For windows, specifiy FFMPEG directory with the exe file and ensure you have it in PATH
         )
         print(f"Frames successfully extracted to temporary directory, starting to move them to {output_folder}")
     except ffmpeg.Error as e:
