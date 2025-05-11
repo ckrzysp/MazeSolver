@@ -7,7 +7,6 @@ import torch
 
 model = YOLO("runs/detect/i1000e25/weights/best.pt")
 
-
 # ------------------------ photo ------------------------ 
 # photo = model("testfiles/Training_725.png")
 # for box in photo[0].boxes:
@@ -36,7 +35,7 @@ model = YOLO("runs/detect/i1000e25/weights/best.pt")
 
 # ------------------------ video ------------------------ 
 
-cap = cv2.VideoCapture("testfiles/miceproj.mp4")
+cap = cv2.VideoCapture("./data/in/miceproj.mp4")
 frame = 0
 c = 0
 with open("coordinates.txt", "w") as f:
@@ -46,24 +45,23 @@ with open("coordinates.txt", "w") as f:
             break
         results = model(frame)
         boxes = results[0].boxes
-        
-        if boxes is not None and boxes.xyxy is not None and c == 25:
+
+        if boxes is not None and boxes.xyxy is not None:
             c = 0
-            for box in boxes.xyxy.cpu().numpy(): 
+            for box in boxes.xyxy.cpu().numpy():
                 x1, y1, x2, y2 = box
                 cx = (x1 + x2) / 2
                 cy = (y1 + y2) / 2
                 # frame x-cord y-cord
-                f.write(f"{frame} {cx:.2f} {cy:.2f}\n")
+                f.write(f"{c} {cx:.2f} {cy:.2f}\n")
+                c+=1
 
         annotated_frame = results[0].plot()
         cv2.imshow("test mice", annotated_frame)
-        
+
         #escape key to exit
         if cv2.waitKey(1) == 27:
             break
-        c+=1
-        frame+=1
 
 cap.release()
 cv2.destroyAllWindows()
