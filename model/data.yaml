@@ -1,7 +1,7 @@
-train: train
+train: ant-r9-7900x-10e
 val: val
 
-train_label_dir: train/labels
+train_label_dir: ant-r9-7900x-10e/labels
 val_label_dir: val/labels
 names:
   0: mouse
