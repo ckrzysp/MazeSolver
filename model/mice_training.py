@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 import os
 import cv2
-
+from glob import glob
 # This whole file essentially is testing and using the mask images to create boundary boxes locations (txt file) for training
 
 def mask_to_yolo_box(mask_path,img_width,img_height):
@@ -40,6 +40,35 @@ def mask_to_yolo_box(mask_path,img_width,img_height):
         annotations.append(f"0 {x_center} {y_center} {norm_w} {norm_h}")
 
     return annotations
+
+def process_folder(image_dir, mask_dir, label_dir):
+    os.makedirs(label_dir, exist_ok=True)
+    os.makedirs("datasets/train/images", exist_ok=True)
+    os.makedirs("datasets/val/images", exist_ok=True)
+    os.makedirs("datasets/train/masks", exist_ok=True)
+    os.makedirs("datasets/val/masks", exist_ok=True)
+    image_paths = glob(os.path.join(image_dir, '*.png'))
+
+    for img_path in image_paths:
+        filename = os.path.splitext(os.path.basename(img_path))[0]
+
+        mask_path = os.path.join(mask_dir, filename + '.png')
+        if not os.path.exists(mask_path):
+            print(f"Mask not found for {filename}, skipping.")
+            continue
+
+        img = cv2.imread(img_path)
+        if img is None:
+            print(f"Could not read image {img_path}, skipping.")
+            continue
+
+        h, w = img.shape[:2]
+        annotations = mask_to_yolo_box(mask_path, w, h)
+
+        label_path = os.path.join(label_dir, filename + '.txt')
+        with open(label_path, "w") as f:
+            for ann in annotations:
+                f.write(ann + "\n")
 
 # ------------------------ testing ------------------------ 
 # def draw_yolo_bounding_box(img_path,label_path):
@@ -81,32 +110,20 @@ def mask_to_yolo_box(mask_path,img_width,img_height):
 
 
 # ------------------------ converting information into txt ------------------------ 
-# train folder
-for i in range(1,1001):
-    m = f'datasets/train/masks/Training_{i}.png'
-    img_path = f'datasets/train/images/Training_{i}.png'
-    img = cv2.imread(img_path)
-    h, w = img.shape[:2]
-    annotations = mask_to_yolo_box(m,w,h)
-    with open(f'datasets/train/labels/Training_{i}.txt',"w") as f:
-        for ann in annotations:
-            f.write(ann + "\n")
-# val folder
-for i in range(1001,1201):
-    m = f'datasets/val/masks/Training_{i}.png'
-    img_path = f'datasets/val/images/Training_{i}.png'
-    img = cv2.imread(img_path)
-    h, w = img.shape[:2]
-    annotations = mask_to_yolo_box(m,w,h)
-    with open(f'datasets/val/labels/Training_{i}.txt',"w") as f:
-        for ann in annotations:
-            f.write(ann + "\n")
-
+process_folder('datasets/train/images', 'datasets/train/masks', 'datasets/train/labels')
+process_folder('datasets/val/images', 'datasets/val/masks', 'datasets/val/labels')
 #draw_yolo_bounding_box("datasets/val/images/Training_100.png","datasets/val/labels/image_100.txt")
 # 0 0.4427083333333333 0.21979166666666666 0.13125 0.18541666666666667
 
+# ------------------------ labeling ------------------------ 
+#manually labeling 100 images
+# train model with those 100 images, and then predict mouse location of the next couple of frames with predicting the location and writing it on each file with the same name
+
+
 # ------------------------ code ------------------------ 
-# yolo task=detect mode=train model=yolov8n.pt data=data.yaml epochs=25 imgsz=480
+# yolo task=detect mode=train model=yolov8n.pt data=data.yaml epochs=25 imgsz=640
+# yolo task=detect mode=predict model=runs/detect/train/weights/best.pt source= testfiles/miceproj.mp4 imgsz=640
+
 #task for detecting object
 #mode for training/predicting
 #model for the base model
