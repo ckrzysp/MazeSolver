@@ -11,3 +11,8 @@
 ultralytics>=8.2.34
 numpy>=1.23.5
 opencv-python>=4.1.1
+
+matplotlib~=3.9.3
+pandas~=2.2.3
+argparse~=1.4.0
+ffmpeg-python~=0.2.0
