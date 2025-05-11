@@ -4,7 +4,7 @@
 # Windows
 ## With Nvidia GPU
 - Python 3.12.x
-- Nvidia GPU >= GTX 1660 TI, RTX 3070, RTX 4070 SUPER
+- Nvidia GPU >= GTX 1660 TI
 
 ## To train
 Install the dependencies in requirements.txt AND cuda-requirements.txt.
