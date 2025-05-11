@@ -8,3 +8,4 @@ d500/
 testfiles/
 **/coordinates.txt
 **/.idea
+**/.DS_Store
