@@ -27,8 +27,8 @@ def combine_graphs():
     # Paths to the CPU or GPU that we used for testing. EPOCHS_PATH_STRING will be used to get the full path later.
     model_results_paths = [
         GPU_BASE_PATH + "ant-4070s",
-        GPU_BASE_PATH + "chris-1660ti",
-        GPU_BASE_PATH + "thomas-3070"
+        # GPU_BASE_PATH + "chris-1660ti",
+        # GPU_BASE_PATH + "thomas-3070"
     ]
 
     line_colors = ["red", "green", "blue"]
@@ -45,6 +45,7 @@ def combine_graphs():
     EPOCHS_PATH_STRING = f"train{epochs_amt}e"
 
     COMBINED_PATH_CSVS = [ path + "/" + EPOCHS_PATH_STRING + "/" + "results.csv" for path in model_results_paths ]
+
 
     columns_per_row = len(columns_to_visualize) // 2
 
