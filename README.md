@@ -1,4 +1,4 @@
-# MazeSolver
+# Survival of the Mice
 
 ## Requirements
 ## Windows
