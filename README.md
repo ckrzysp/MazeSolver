@@ -8,7 +8,7 @@
 
 ## To train
 Install the dependencies in requirements.txt AND cuda-requirements.txt.
-Then run 
+Then run model/gpu_training.py
 
 ## MacOS
 - Python >3.12
