@@ -1,9 +1,7 @@
 # model
 
-datasets files [Dropbox](https://www.dropbox.com/scl/fo/wd9gvzql5w8d2kxg38gi2/AF5AMotHkhLMNTQ9eVyNRPo?rlkey=q89nz18d0w3cstpk6w4dvrlb2&st=82v3fdtu&dl=0)
-
-1200 images (technically 2200 but the mask is not used for training)
-- 1000 Training and mask
+1000 images 
+- 800 Training
 - 200 validation
 
 > **Note:** The mask images are used to create and document the box coordinates in a text file used for training. Also making this I realized I didn't compress the images folder into a zip file.
@@ -11,7 +9,6 @@ datasets files [Dropbox](https://www.dropbox.com/scl/fo/wd9gvzql5w8d2kxg38gi2/AF
 **If you want to try and train it yourself**
 
 1. Download the dataset
-- using the Dropbox link
 - place folder in the `mode/`
 **(Optional: adjusting amount of photos)**
 - delete contents in `labels/` for both `train/` and `val/`
