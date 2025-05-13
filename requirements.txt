@@ -16,3 +16,5 @@ matplotlib~=3.9.3
 pandas~=2.2.3
 argparse~=1.4.0
 ffmpeg-python~=0.2.0
+torch>=2.7.0
+torchvision>=0.22.0

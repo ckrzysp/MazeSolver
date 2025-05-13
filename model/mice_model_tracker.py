@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 import cv2
 import ultralytics
-import argparse
+# import argparse
 import torch
 #ultralytics.check()
 
@@ -51,7 +51,7 @@ def predict_labels(modelName, videoName):
                 file.write(f'Center: ({cx:.2f}, {cy:.2f}) \n')
 
 # ------------------------ video ------------------------ 
-def display_annotation_detect_object(modelName, fileName):
+def detect_object_in_video(modelName, fileName):
     """
     draw a boundary box for each frame and shows confidence 
 
@@ -79,7 +79,7 @@ def display_annotation_detect_object(modelName, fileName):
             if boxes is not None and boxes.xyxy is not None:
                 c = 0
                 for box in boxes.xyxy.cpu().numpy():
-                    #top left, bottom right
+                    # top left, bottom right
                     x1, y1, x2, y2 = box            
                     # dividing both gets center coordinate of the box
                     cx = (x1 + x2) / 2
@@ -110,7 +110,7 @@ elif(choice == "2"):
     # modelName, videoName
     model = input("modelName: \n(ex: 'GPU/ant-4070s/train10e' or 'CPU/perfect' )\n")
     video = input("video: (in testfile)\n")
-    display_annotation_detect_object(model,video)
+    detect_object_in_video(model,video)
 elif(choice == "3"):
     # modelName, videoName
     model = input("modelName: \n(ex: 'GPU/ant-4070s/train10e' or 'CPU/perfect' )\n")
