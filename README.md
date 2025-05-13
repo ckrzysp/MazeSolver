@@ -15,12 +15,12 @@
 
 ### 1. Download the requirements
 
-- In 'MazeSolver/' go to your terminal and enter  
-'pip install -r requirements.txt'
+- In `MazeSolver/` go to your terminal and enter  
+`pip install -r requirements.txt`
 
 **(Optional: If you have a nvidia graphics card)**
-1. 'pip uninstall torch torchvision'
-2. 'pip install -r cuda-requirements.txt'
+1. `pip uninstall torch torchvision`
+2. `pip install -r cuda-requirements.txt`
 - if torchaudio does not install, thats fine
 
 ### 2. Download the dataset
