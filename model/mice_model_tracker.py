@@ -99,25 +99,25 @@ def display_annotation_detect_object(modelName, fileName):
     cv2.destroyAllWindows()
 
 # has to be in testfiles
-choice = input("(1) detect_object_in_photo\n(2) display_annotation_detect_object\n(3) predict_labels\n")
+choice = input("(1) detect_object_in_photo\n(2) detect_object_in_video\n(3) predict_labels\n")
 
 if(choice == "1"):
     # modelName, ImageName
     model = input("modelName: \n(ex: 'GPU/ant-4070s/train10e' or 'CPU/perfect' )\n")
-    image = input("image: \n")
+    image = input("image: (in testfile)\n")
     detect_object_in_photo(model,image)
 elif(choice == "2"):
     # modelName, videoName
     model = input("modelName: \n(ex: 'GPU/ant-4070s/train10e' or 'CPU/perfect' )\n")
-    video = input("video: \n")
+    video = input("video: (in testfile)\n")
     display_annotation_detect_object(model,video)
 elif(choice == "3"):
     # modelName, videoName
     model = input("modelName: \n(ex: 'GPU/ant-4070s/train10e' or 'CPU/perfect' )\n")
-    video = input("video: \n")
+    video = input("video: (in testfile)\n")
     predict_labels(model,video)
 
-#if you dont like the inputs just comment them out and instead p
+# if you dont like the inputs just comment them out
 
 # yolo task=detect mode=train model=yolov8n.pt data=data.yaml epochs=25 imgsz=640 device=0
 # yolo task=detect mode=predict model=runs/detect/train/weights/best.pt source= testfiles/miceproj.mp4 imgsz=640

@@ -73,7 +73,7 @@ def process_folder(image_dir, mask_dir, label_dir):
 # ------------------------ testing ------------------------ 
 # def draw_yolo_bounding_box(img_path,label_path):
 #     """
-#     drawing the annotations(boundaing box) around the mouse on a copy image (temporary)
+#     drawing the annotations(boundaing box) around the mouse on a copy image (temporary) to test if the label is accurate
 
 #     args:
 #     img_path (str): the grayscale image
@@ -108,24 +108,8 @@ def process_folder(image_dir, mask_dir, label_dir):
 #             cv2.waitKey(3000)
 #             cv2.destroyAllWindows
 
-
 # ------------------------ converting information into txt ------------------------ 
 process_folder('datasets/train/images', 'datasets/train/masks', 'datasets/train/labels')
 process_folder('datasets/val/images', 'datasets/val/masks', 'datasets/val/labels')
 #draw_yolo_bounding_box("datasets/val/images/Training_100.png","datasets/val/labels/image_100.txt")
 # 0 0.4427083333333333 0.21979166666666666 0.13125 0.18541666666666667
-
-# ------------------------ labeling ------------------------ 
-#manually labeling 100 images
-# train model with those 100 images, and then predict mouse location of the next couple of frames with predicting the location and writing it on each file with the same name
-
-
-# ------------------------ code ------------------------ 
-# yolo task=detect mode=train model=yolov8n.pt data=data.yaml epochs=25 imgsz=640
-# yolo task=detect mode=predict model=runs/detect/train/weights/best.pt source= testfiles/miceproj.mp4 imgsz=640
-
-#task for detecting object
-#mode for training/predicting
-#model for the base model
-#data is my data.yaml config file
-#epochs is how many complete passes
