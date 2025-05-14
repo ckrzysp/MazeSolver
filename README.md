@@ -1,5 +1,7 @@
 # Survival of the Mice
 
+A Computer Vision project that can identify mice and track them while avoiding obstacles in a maze!
+
 ## Requirements
 ## Windows
 #### With Nvidia GPU
