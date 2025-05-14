@@ -5,7 +5,6 @@ data/out/
 d1000/
 dp/
 d500/
-testfiles/
 **/coordinates.txt
 **/.idea
 **/.DS_Store
