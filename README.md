@@ -1,4 +1,4 @@
-## Survival of the Mice
+## Survival of the Mice (SotM)
 
 We developed a model that uses the YOLOv8n object detection algorithm to track mice in a maze. The project initially aimed to analyze mouse behavior in experimental setups. However, due to limitations in behavioral label quality and complexity in modeling nuanced actions, we pivoted to focus on evaluating the performance of the detection model itself. This included assessing model accuracy, training efficiency, and the impact of dataset size and augmentation on performance. Our approach highlights the practicality and limitations of lightweight CNN models like YOLOv8n in constrained research settings.
 
