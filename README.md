@@ -5,6 +5,8 @@ We developed a model that uses the YOLOv8n object detection algorithm to track m
 
 https://github.com/user-attachments/assets/6ece5e21-7ed6-4b7f-b5e2-24cbbd10d812
 
+https://github.com/user-attachments/assets/d1a7a259-8d57-4833-9de7-67c491e6ac0b
+
 ## Model
 [dataset: soon](https://github.com/ckrzysp/MazeSolver/tree/main/model)
 
