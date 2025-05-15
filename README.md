@@ -3,7 +3,7 @@
 We developed a model that uses the YOLOv8n object detection algorithm to track mice in a maze. The project initially aimed to analyze mouse behavior in experimental setups. However, due to limitations in behavioral label quality and complexity in modeling nuanced actions, we pivoted to focus on evaluating the performance of the detection model itself. This included assessing model accuracy, training efficiency, and the impact of dataset size and augmentation on performance. Our approach highlights the practicality and limitations of lightweight CNN models like YOLOv8n in constrained research settings.
 ## Video Demo
 
-
+https://github.com/user-attachments/assets/6ece5e21-7ed6-4b7f-b5e2-24cbbd10d812
 
 ## Model
 [dataset: soon](https://github.com/ckrzysp/MazeSolver/tree/main/model)
