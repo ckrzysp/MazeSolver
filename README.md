@@ -8,7 +8,7 @@ https://github.com/user-attachments/assets/6ece5e21-7ed6-4b7f-b5e2-24cbbd10d812
 https://github.com/user-attachments/assets/d1a7a259-8d57-4833-9de7-67c491e6ac0b
 
 ## Model
-[dataset: soon](https://github.com/ckrzysp/MazeSolver/tree/main/model)
+[Dataset](https://www.dropbox.com/scl/fo/wd9gvzql5w8d2kxg38gi2/AF5AMotHkhLMNTQ9eVyNRPo?rlkey=q89nz18d0w3cstpk6w4dvrlb2&st=jrgtff8m&dl=0)
 
 - 1000 images 
   - 800 Training
